@@ -1,0 +1,47 @@
+.product {
+  height: 100%;
+  background: #eeeeee;
+
+  &__container {
+    padding-top: 1rem;
+  }
+  .path {
+    max-width: 95%;
+    margin: 0 auto;
+    font-size: 10px;
+    color: #1e1e1e;
+  }
+  &__main {
+    padding: 20px 15px;
+    max-width: 95%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 1rem;
+    gap: 1rem;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    &_one {
+      grid-column: span 9;
+      height: 100%;
+    }
+
+    &_two {
+      grid-column: span 3;
+    }
+  }
+  @media (max-width: 900px) {
+    &__main {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0 5px;
+      gap: 0;
+      &_one {
+        grid-column: span 1;
+      }
+      &_two {
+        grid-column: span 1;
+      }
+    }
+  }
+}

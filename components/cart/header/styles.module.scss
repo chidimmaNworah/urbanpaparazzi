@@ -1,0 +1,42 @@
+.header {
+  height: 48px;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    img {
+      height: 35px;
+      cursor: pointer;
+    }
+  }
+  &__right {
+    a {
+      display: flex;
+      align-items: center;
+      color: $light-pink-color;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    svg {
+      fill: $light-pink-color;
+      width: 16px;
+      height: 16px;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: $light-pink-color;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.main {
+  @media (max-width: 960px) {
+    // &:nth-of-type(2),
+    // &:nth-of-type(3),
+    // &:nth-of-type(4) {
+    display: none;
+    // }
+  }
+  &__container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px 0 20px 0;
+    &_block {
+      display: grid;
+      grid-template-columns: repeat(
+        4,
+        1fr
+      ); /* Divide the container into 4 columns */
+      gap: 20px;
+    }
+    &_post {
+      display: flex;
+      align-items: center; /* Align items vertically */
+      gap: 10px;
+      &_img {
+        width: 55px; /* Set a fixed width for the square container */
+        height: 55px; /* Set a fixed height for the square container */
+        border-radius: 50%; /* Make it a circle */
+        overflow: hidden; /* Hide any overflowing content */
+        img {
+          width: 100%; /* Ensure the image fills the square container */
+          height: 100%; /* Ensure the image fills the square container */
+          object-fit: cover; /* Cover the square container */
+        }
+      }
+      span {
+        width: 75%;
+        font-size: 13px;
+        overflow: hidden; /* Hide overflowing content */
+        text-overflow: ellipsis; /* Display ellipsis for overflow text */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limit number of lines to 3 */
+        -webkit-box-orient: vertical;
+        line-height: 15px;
+      }
+    }
+  }
+}

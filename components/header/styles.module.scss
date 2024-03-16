@@ -1,0 +1,243 @@
+.header {
+  height: 100%;
+
+  // box-shadow: $shadow-1;
+}
+
+// AD -------------------------------------------
+
+.name {
+  width: 100%;
+  background: #379237;
+  padding: 10px 0 10px 0;
+  .nameText {
+    max-width: 95%;
+    margin: 0 auto;
+    p {
+      font-size: 40px;
+      color: #fff;
+      b {
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+// TOP -------------------------------------------
+.top {
+  padding: 5px 0 5px 0;
+  background: #1e1e1e;
+  @media (max-width: 960px) {
+    // &:nth-of-type(2),
+    // &:nth-of-type(3),
+    // &:nth-of-type(4) {
+    display: none;
+    // }
+  }
+  &__container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__list {
+    display: flex;
+    gap: 15px;
+    .li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      color: #fff;
+      cursor: pointer;
+      .flex {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        svg {
+          transform: scale(1.2);
+          margin-right: 3px;
+        }
+      }
+      img {
+        width: 28px;
+        height: 28px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $dark-red-color;
+      }
+      span {
+        font-size: 12px;
+      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   right: -8px;
+      //   top: 50%;
+      //   transform: translateY(-50%);
+      //   width: 1px;
+      //   height: 20px;
+      //   background: #fff;
+      //   transition: all 1s;
+      // }
+      &:last-of-type {
+        &::after {
+          display: none;
+        }
+      }
+      &:hover {
+        span {
+          color: #222;
+        }
+        svg {
+          fill: #fff;
+        }
+        .flex {
+          transition: all 2s;
+        }
+      }
+    }
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 12px;
+  }
+}
+.socialIcons {
+  display: flex;
+  font-size: 20px;
+}
+
+.menu {
+  z-index: 1111;
+  width: 280px;
+  min-height: 100%;
+  box-shadow: $shadow-1;
+  position: absolute;
+  // top: 120%;
+  // right: 0;
+  background: #fff;
+  color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+  h4 {
+    text-align: center;
+  }
+  .flex {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  ul {
+    li {
+      height: 30px;
+      a {
+        width: 100%;
+        padding-left: 1rem;
+        color: #1e1e1e;
+        &:hover {
+          color: #379237;
+        }
+      }
+    }
+  }
+  &__img {
+    width: 100px !important;
+    height: 100px !important;
+    margin-right: 8px;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    span {
+      // color: $light-orange-color;
+      &:first-of-type {
+        color: $light-orange-color;
+      }
+      &:last-of-type {
+        font-size: 14px;
+        color: $light-orange-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.main {
+  // position: fixed;
+  display: flex;
+  align-items: center;
+  background: #54b435;
+  padding: 8px 0 8px 0;
+  &__container {
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    color: #fff;
+    ul {
+      // display: flex;
+      gap: 14px;
+    }
+    &_socials {
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background: transparent;
+    height: 30px;
+    // border-radius: 5px;
+    // border: 1px solid #ccc;
+    // color: #ccc;
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      background: rgba(204, 204, 204, 0.3);
+      padding-left: 1rem;
+      border-radius: 5px;
+      font-size: 0.7rem;
+      ::placeholder {
+        color: #ccc;
+      }
+    }
+    &__icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: transparent;
+      // border-top-right-radius: 5px;
+      // border-bottom-right-radius: 5px;
+      cursor: pointer;
+      svg {
+        width: 21px;
+        height: 21px;
+        fill: #fff;
+      }
+    }
+  }
+}

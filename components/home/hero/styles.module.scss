@@ -1,0 +1,164 @@
+.container {
+  margin-bottom: 2rem;
+  &__flashDeals {
+    max-width: 95%;
+    margin: 0 auto;
+
+    &_main {
+      width: 100%;
+      height: 450px;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      overflow: hidden;
+
+      div {
+        position: relative;
+        width: 85%;
+
+        margin-right: -100px; /* Overlap images */
+        transition: margin-right 0.3s ease-in-out;
+
+        .textOverlay {
+          padding: 0 25px 0 25px;
+          color: #fff;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin-bottom: 30px;
+          // height: 25rem;
+          &__category {
+            text-transform: uppercase;
+            background: #379237;
+            width: 50%;
+            text-align: center;
+            border-radius: 2px;
+            padding: 5px 0;
+            p {
+              width: 100%;
+              font-size: 10px;
+            }
+          }
+          &__name {
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 5px 0;
+          }
+          &__description {
+            display: none; // Hide description by default
+          }
+          &__timestamp {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 5px;
+            span {
+              display: flex;
+              align-items: center;
+              gap: 3px;
+              font-weight: 500;
+              font-size: 9px;
+            }
+          }
+        }
+
+        &:hover {
+          margin-right: 0; /* Remove overlap on hover */
+          width: 100%; /* Expand width on hover */
+          z-index: 1; /* Bring hovered image to front */
+
+          .textOverlay {
+            // height: 30rem;
+
+            &__description {
+              display: flex; // Display description on hover
+              font-size: 0.8rem;
+              overflow: hidden; /* Hide overflowing content */
+              text-overflow: ellipsis; /* Display ellipsis for overflow text */
+              display: -webkit-box;
+              -webkit-line-clamp: 3; /* Limit number of lines to 3 */
+              -webkit-box-orient: vertical;
+              line-height: 18px;
+              // margin-top: 15px;
+              width: 100%;
+            }
+            &__category {
+              text-transform: uppercase;
+              background: #379237;
+              width: 50%;
+              text-align: center;
+              border-radius: 2px;
+              padding: 5px 0;
+              p {
+                width: 100%;
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.6); /* Darken the image */
+        transition: filter 0.3s ease-in-out;
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.7);
+      }
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+        // width: 100%;
+        height: 100%;
+        div {
+          width: 100%;
+          // height: 450px;
+          margin-right: 0;
+          margin-bottom: 1rem;
+          .textOverlay {
+            height: auto; /* Reset height */
+            margin-bottom: 0;
+            width: 100%;
+            &__description {
+              display: block; // Display description on hover
+              font-size: 0.6rem;
+              overflow: hidden; /* Hide overflowing content */
+              text-overflow: ellipsis; /* Display ellipsis for overflow text */
+              display: -webkit-box;
+              -webkit-line-clamp: 3; /* Limit number of lines to 3 */
+              -webkit-box-orient: vertical;
+              line-height: 22px;
+              margin-top: 0;
+            }
+            &__category {
+              text-transform: uppercase;
+              background: #379237;
+              width: 30%;
+              text-align: center;
+              border-radius: 2px;
+              padding: 5px 0;
+              p {
+                width: 100%;
+                font-size: 13px;
+              }
+            }
+            &__name {
+              font-weight: 800;
+              font-size: 1rem;
+              margin: 5px 0;
+            }
+            &__timestamp {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-weight: 500;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

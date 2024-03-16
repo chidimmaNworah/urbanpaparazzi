@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --dark-red-color: #e39a9a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --dark-red-color: #5a141d;
+  }
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  &::before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  // color: rgb(var(--foreground-rgb));
+  // background: linear-gradient(
+  //     to bottom,
+  //     transparent,
+  //     rgb(var(--background-end-rgb))
+  //   )
+  //   rgb(var(--background-start-rgb));
+  background: #fff;
+  // font-family: sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  // margin: 16px;
+  // font-weight: 600;
+  // font-style: italic;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+button {
+  border: none;
+  outline: none;
+}
