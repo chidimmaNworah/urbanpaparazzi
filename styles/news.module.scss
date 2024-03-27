@@ -1,0 +1,95 @@
+.product {
+  // height: 100%;
+  background: #eeeeee;
+
+  &__container {
+    padding-top: 1rem;
+  }
+  .path {
+    max-width: 95%;
+    margin: 0 auto;
+    font-size: 10px;
+    color: #1e1e1e;
+  }
+  &__main {
+    padding: 20px 15px;
+    max-width: 95%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 1rem;
+    gap: 1rem;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    &_one {
+      grid-column: span 9;
+      // height: 100%;
+      display: flex;
+      // display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      flex-wrap: wrap;
+      gap: 10px;
+      .newsPage {
+        // height: 300px;
+        &__post {
+          width: 200px;
+          // height: 200px;
+          img {
+            // width: 150px;
+            height: 120px;
+            object-fit: cover;
+          }
+          &_category {
+            width: 100%;
+            padding: 2px 6px;
+            font-size: 8px;
+            background: #333333;
+            color: #ccc;
+          }
+          &_name {
+            font-weight: 900;
+            font-size: 0.8rem;
+          }
+          &_timestamp {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 7px;
+            color: #5c5c5c;
+          }
+          &_desc {
+            font-size: 13px;
+            overflow: hidden; /* Hide overflowing content */
+            text-overflow: ellipsis; /* Display ellipsis for overflow text */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limit number of lines to 3 */
+            -webkit-box-orient: vertical;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+
+    &_two {
+      grid-column: span 3;
+      // background: #000;
+      // position: absolute;
+      // top: 0;
+    }
+  }
+  @media (max-width: 900px) {
+    &__main {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0 5px;
+      gap: 0;
+      &_one {
+        grid-column: span 1;
+      }
+      &_two {
+        grid-column: span 1;
+      }
+    }
+  }
+}

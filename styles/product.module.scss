@@ -25,10 +25,14 @@
     &_one {
       grid-column: span 9;
       height: 100%;
+      // position: relative;
     }
 
     &_two {
       grid-column: span 3;
+      // background: #000;
+      // position: absolute;
+      // top: 0;
     }
   }
   @media (max-width: 900px) {

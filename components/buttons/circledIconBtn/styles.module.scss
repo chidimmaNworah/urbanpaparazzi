@@ -6,17 +6,17 @@
   height: 55px;
   border-radius: 55px;
   font-weight: 600;
-  color: $dark-red-color;
-  background: $light-pink-color;
+  color: #ccc;
+  background: #379237;
   display: block;
   cursor: pointer;
   &:hover {
-    background: $dark-red-color;
-    border: 1px solid $light-pink-color;
-    color: $light-pink-color;
+    background: #54b435;
+    border: 1px solid #379237;
+    color: #ccc;
     .svg__wrap {
       svg {
-        fill: $light-pink-color;
+        fill: #ccc;
       }
     }
   }
@@ -29,9 +29,9 @@
     position: absolute;
     top: 7.5px;
     right: 5px;
-    background: $dark-red-color;
+    background: #54b435;
     svg {
-      fill: $light-pink-color;
+      fill: #ccc;
     }
   }
 }

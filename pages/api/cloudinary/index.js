@@ -26,14 +26,20 @@ export const config = {
 router.post(async (req, res) => {
   try {
     const { path } = req.body || {};
-    let files = Object.values(req.files).flat();
-    let images = [];
-    for (const file of files) {
-      const img = await uploadToCloudinaryHandler(file, path);
-      images.push(img);
-      removeTmp(file.tempFilePath);
-    }
-    res.json(images);
+    // let files = Object.values(req.files).flat();
+    let file = req.files.file;
+    console.log("cloudinary", file);
+    // let image = "";
+    // for (const file of files) {
+    // if (!file || !file.tempFilePath) {
+    //   throw new Error("No file uploaded or temporary file path not found.");
+    // }
+    const img = await uploadToCloudinaryHandler(file, path);
+    // image.push(img);
+    removeTmp(file.tempFilePath);
+    // }
+    res.json(img);
+    console.log("successfully uploaded image");
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: error.message });

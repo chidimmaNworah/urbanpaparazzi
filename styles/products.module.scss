@@ -1,7 +1,7 @@
 @import "../components/admin/base";
 .header {
   margin-bottom: 1rem;
-  color: $light-orange-color;
+  color: #379237;
 }
 .form {
   display: flex;
@@ -34,5 +34,74 @@
   &:hover {
     width: 250px;
     height: 80px;
+  }
+}
+.productsCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quill {
+  label {
+    font-weight: 600;
+    background: #ccc;
+    color: #379237;
+    padding: 1px 10px;
+  }
+  div:nth-child(2) {
+    height: 20rem;
+  }
+}
+
+.editName {
+  .label {
+    border: 1px solid #cccccc8e;
+    display: flex;
+    align-items: center;
+    height: 42px;
+    overflow: hidden;
+    margin: 1rem 0;
+    span {
+      display: block;
+      background: #ccc;
+      font-size: 15px;
+      font-weight: 700;
+      color: #379237;
+      display: grid;
+      place-items: center;
+      padding: 0 10px;
+      width: 100px;
+      height: 100%;
+    }
+    input,
+    textarea {
+      outline: none;
+      border: none;
+      width: 100px;
+      height: 100%;
+      flex: 1;
+      background: transparent;
+      color: #000 !important;
+      padding-left: 5px;
+      &::placeholder {
+        color: #666;
+      }
+    }
+  }
+  .inputError {
+    span {
+      background: $error-color !important;
+    }
+    input {
+      background: rgba(255, 0, 0, 0.031) !important;
+      border: px solid $error-color !important;
+    }
+    &__msg {
+      color: $error-color;
+      font-size: 14px;
+      margin-left: 105px;
+      margin-top: -13px;
+    }
   }
 }

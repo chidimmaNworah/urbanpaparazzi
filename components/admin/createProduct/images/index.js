@@ -7,11 +7,12 @@ import { showDialog } from "@/store/DialogSlice";
 import styles from "./styles.module.scss";
 import { GiExtractionOrb } from "react-icons/gi";
 export default function Images({
-  images,
-  setImages,
+  image,
+  setImage,
   header,
   text,
   name,
+  value,
   setColorImage,
   ...props
 }) {
@@ -20,65 +21,21 @@ export default function Images({
   const [meta, field] = useField(props);
 
   const handleImages = (e) => {
-    let files = Array.from(e.target.files);
-    files.forEach((img, i) => {
-      if (images.length > 6) {
-        dispatch(
-          showDialog({
-            header: "Maximum 6 images are allowed.",
-            msgs: [
-              {
-                msg: `Maximum of total six images are allowed.`,
-                type: "error",
-              },
-            ],
-          })
-        );
-        return;
-      }
-      if (
-        img.type !== "image/jpeg" &&
-        img.type !== "image/png" &&
-        img.type !== "image/webp"
-      ) {
-        dispatch(
-          showDialog({
-            header: "Unsupported Format.",
-            msgs: [
-              {
-                msg: `${img.name} format is unsupported ! only JPEG,PNG,WEBP are allowed.`,
-                type: "error",
-              },
-            ],
-          })
-        );
-        files = files.filter((item) => item !== img.name);
-        return;
-      } else if (img.size > 1024 * 1024 * 10) {
-        dispatch(
-          showDialog({
-            header: "Unsupported Format.",
-            msgs: [
-              {
-                msg: `${img.name} size is too large, maximum of 10mb allowed.`,
-                type: "error",
-              },
-            ],
-          })
-        );
-        return;
-      } else {
-        const reader = new FileReader();
-        reader.readAsDataURL(img);
-        reader.onload = (e) => {
-          setImages((images) => [...images, e.target.result]);
-        };
-        console.log(reader);
-      }
-    });
+    const file = e.target.files[0]; // Get the first selected file from the input
+    // console.log("image: ", file);
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file); // Read the file as a data URL
+    reader.onload = (e) => {
+      setImage(e.target.result); // Update the state with the image data URL
+    };
   };
-  const handleRemove = (image) => {
-    setImages((images) => images.filter((item) => item !== image));
+  // const handleRemove = (image) => {
+  //   setImage((image) => image.filter((item) => item !== image));
+  // };
+
+  const handleRemove = () => {
+    setImage(""); // Set the image state to an empty string
   };
   return (
     <div className={styles.images}>
@@ -100,59 +57,40 @@ export default function Images({
       </div>
       <input
         type="file"
-        name={name}
+        name="name"
         ref={fileInput}
         hidden
-        multiple
+        // multiple
         accept="image/jpeg,image/png,image/webp"
         onChange={handleImages}
         // {...field}
       />
       <div className={styles.images__main}>
-        <div
-          className={`${styles.images__main_grid} ${
-            images.length == 2
-              ? styles.grid__two
-              : images.length == 3
-              ? styles.grid__three
-              : images.length == 4
-              ? styles.grid__foor
-              : images.length == 5
-              ? styles.grid__five
-              : images.length == 6
-              ? styles.grid__six
-              : ""
-          }`}
-        >
-          {!images.length ? (
+        <div className={`${styles.images__main_grid}`}>
+          {!image?.length ? (
             <img src="../../../images/no_image.png" alt="" />
           ) : (
-            images.map((img, i) => (
-              <div className={styles.images__main_grid_wrap} key={i}>
-                <div className={styles.blur}></div>
-                <img src={img} alt="" />
-                <div className={styles.images__main_grid_actions}>
-                  <button onClick={() => handleRemove(img)}>
-                    <RiDeleteBin7Fill />
-                  </button>
-                  <button onClick={() => setColorImage(img)}>
-                    <GiExtractionOrb />
-                  </button>
-                  <button>
-                    <RiShape2Line />
-                  </button>
-                </div>
+            <div className={styles.images__main_grid_wrap}>
+              <div className={styles.blur}></div>
+              <img src={image} alt="" />
+              <div className={styles.images__main_grid_actions}>
+                <button onClick={() => handleRemove(image)}>
+                  <RiDeleteBin7Fill />
+                </button>
+                <button>
+                  <RiShape2Line />
+                </button>
               </div>
-            ))
+            </div>
           )}
         </div>
       </div>
       <button
         type="reset"
-        style={{ opacity: `${images.length >= 6 && "0.5"}` }}
+        // style={{ opacity: `${image?.length >= 1 && "0.5"}` }}
         onClick={() => fileInput.current.click()}
         className={`${styles.btn} ${styles.btn__primary}`}
-        disabled={images.length >= 6}
+        // disabled={image?.length >= 1}
       >
         {text}
       </button>

@@ -17,6 +17,8 @@ import {
 import axios from "axios";
 import Router from "next/router";
 import DotLoader from "@/components/loaders/dotLoader";
+import News from "@/models/News";
+import Category from "@/models/Category";
 const initialvalues = {
   login_email: "",
   login_password: "",
@@ -28,7 +30,7 @@ const initialvalues = {
   error: "",
   login_error: "",
 };
-export default function signin({ providers, callbackUrl, csrfToken }) {
+export default function signin({ providers, callbackUrl, csrfToken, news }) {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(initialvalues);
   const {
@@ -126,12 +128,12 @@ export default function signin({ providers, callbackUrl, csrfToken }) {
                 <BiLeftArrowAlt />
               </div>
               <span>
-                We'd be happy to join us! <Link href="/">Go Store</Link>
+                We'd be happy to join us! <Link href="/">Go to Home</Link>
               </span>
             </div>
             <div className={styles.login__form}>
               <h1>Sign in</h1>
-              <p>Get access to the best Nail shopping services in the world.</p>
+              <p>Get access to the best Urban News Magazine.</p>
               <Formik
                 enableReinitialize
                 initialValues={{
@@ -276,7 +278,7 @@ export default function signin({ providers, callbackUrl, csrfToken }) {
           </div>
         </div>
       </div>
-      <Footer country="Nigeria" />
+      <Footer news={news} />
     </>
   );
 }
@@ -292,9 +294,18 @@ export async function getServerSideProps(context) {
       },
     };
   }
+  let news = await News.find()
+    .populate({ path: "category", model: Category })
+    .sort({ createdAt: -1 })
+    .lean();
   const csrfToken = await getCsrfToken(context);
   const providers = Object.values(await getProviders());
   return {
-    props: { providers, csrfToken, callbackUrl },
+    props: {
+      providers,
+      csrfToken,
+      callbackUrl,
+      news: JSON.parse(JSON.stringify(news)),
+    },
   };
 }

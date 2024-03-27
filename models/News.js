@@ -33,6 +33,9 @@ const newsSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    post: {
+      type: String,
+    },
     slug: {
       type: String,
       required: true,

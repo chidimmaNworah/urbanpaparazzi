@@ -1,5 +1,5 @@
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   background: #fafafa;
@@ -79,7 +79,7 @@
       margin-bottom: 10px;
       cursor: pointer;
       &:hover {
-        background: $dark-red-color;
+        background: #379237;
         color: #fff;
         font-weight: 600;
         svg {
@@ -126,7 +126,7 @@
   nav {
     ul {
       li {
-        background: $dark-pink-color;
+        background: #54b435;
         border-radius: 50%;
         svg {
           fill: #fff;
@@ -136,7 +136,7 @@
   }
 }
 .active {
-  background: $dark-red-color !important;
+  background: #379237 !important;
   a span {
     color: #fff !important;
     font-weight: 600 !important;

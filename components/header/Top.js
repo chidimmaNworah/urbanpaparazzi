@@ -32,12 +32,13 @@ export default function Top({ country }) {
             </Link>
           </li>
           <li className={styles.li}>
-            <span>Forum</span>
+            <Link href="/About">
+              <span>Forum</span>
+            </Link>
           </li>
           {session?.user?.role === "admin" ? (
             <li className={styles.li}>
-              <BsSuitHeart />
-              <Link href="/Admin">
+              <Link href="/admin/dashboard">
                 <span>Admin</span>
               </Link>
             </li>

@@ -66,22 +66,22 @@ export default function Sidebar() {
               </a>
             </Link>
           </li>
-          <li className={route == "sales" ? styles.active : ""}>
+          {/* <li className={route == "sales" ? styles.active : ""}>
             <Link href="/admin/dashboard/sales" legacyBehavior>
               <a>
                 <FcSalesPerformance title="Sales" />
                 <span className={styles.show}>Sales</span>
               </a>
             </Link>
-          </li>
-          <li className={route == "orders" ? styles.active : ""}>
+          </li> */}
+          {/* <li className={route == "orders" ? styles.active : ""}>
             <Link href="/admin/dashboard/orders" legacyBehavior>
               <a>
                 <IoListCircleSharp title="Orders" />
                 <span className={styles.show}>Orders</span>
               </a>
             </Link>
-          </li>
+          </li> */}
           <li className={route == "users" ? styles.active : ""}>
             <Link href="/admin/dashboard/users" legacyBehavior>
               <a>
@@ -101,22 +101,22 @@ export default function Sidebar() {
         </ul>
         <div className={styles.sidebar__dropdown}>
           <div className={styles.sidebar__dropdown_heading}>
-            <div className={styles.show}>Product</div>
+            <div className={styles.show}>Posts</div>
           </div>
           <ul className={styles.sidebar__list}>
             <li className={route == "product/all" ? styles.active : ""}>
-              <Link href="/admin/dashboard/product/all" legacyBehavior>
+              <Link href="/admin/dashboard/post/all" legacyBehavior>
                 <a>
-                  <FaThList title="All Products" />
-                  <span className={styles.show}>All Products</span>
+                  <FaThList title="All Posts" />
+                  <span className={styles.show}>All Posts</span>
                 </a>
               </Link>
             </li>
             <li className={route == "product/create" ? styles.active : ""}>
-              <Link href="/admin/dashboard/product/create" legacyBehavior>
+              <Link href="/admin/dashboard/post/create" legacyBehavior>
                 <a>
-                  <BsPatchPlus title="Create Product" />
-                  <span className={styles.show}>Create Product</span>
+                  <BsPatchPlus title="Create Post" />
+                  <span className={styles.show}>Create Post</span>
                 </a>
               </Link>
             </li>

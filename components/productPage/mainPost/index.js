@@ -10,11 +10,11 @@ import { HiShare } from "react-icons/hi";
 export default function MainPost({ post }) {
   const [active, setActive] = useState(0);
   return (
-    <div className={styles.swiper}>
-      <div className={styles.swiper__list}>
-        <p className={styles.swiper__list_category}>{post.category.name}</p>
-        <h3 className={styles.swiper__list_name}>{post.name}</h3>
-        <div className={styles.swiper__list_timestamp}>
+    <div className={styles.mainpost}>
+      <div className={styles.mainpost__list}>
+        <p className={styles.mainpost__list_category}>{post.category.name}</p>
+        <h3 className={styles.mainpost__list_name}>{post.name}</h3>
+        <div className={styles.mainpost__list_timestamp}>
           <span className="flex">
             <IoTimeOutline /> {dayjs(post.createdAt).format("MMMM D")}
           </span>

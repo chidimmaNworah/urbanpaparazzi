@@ -45,7 +45,7 @@ export default function SingularSelect({
         </MenuItem>
         {data?.map((option) => (
           <MenuItem key={option._id} value={option._id || option.name}>
-            {option.name}
+            {option.name || value}
           </MenuItem>
         ))}
       </TextField>

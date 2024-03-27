@@ -7,9 +7,10 @@ export const uploadImages = async (formData) => {
         "Content-Type": "multipart/form-data",
       },
     });
+    console.log(response);
     return response.data;
   } catch (error) {
-    console.error("Error uploading images:", error);
-    throw new Error("Failed to upload images to Cloudinary.");
+    console.error("Error uploading image:", error);
+    throw new Error("Failed to upload image to Cloudinary.");
   }
 };

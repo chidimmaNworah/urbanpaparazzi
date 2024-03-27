@@ -2,6 +2,8 @@
   height: 100%;
 
   // box-shadow: $shadow-1;
+  position: relative;
+  z-index: 33333;
 }
 
 // AD -------------------------------------------
@@ -11,6 +13,7 @@
   background: #379237;
   padding: 10px 0 10px 0;
   .nameText {
+    cursor: pointer;
     max-width: 95%;
     margin: 0 auto;
     p {
@@ -18,6 +21,69 @@
       color: #fff;
       b {
         font-weight: 800;
+      }
+    }
+  }
+  &__menu {
+    &_close {
+      padding-left: 14px;
+      display: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    display: flex;
+    padding: 10px 8px;
+    align-items: center;
+    gap: 10px;
+    .nameText {
+      // display: flex;
+      p {
+        display: flex;
+        gap: 5px;
+        letter-spacing: 1px;
+        font-size: 1rem;
+        b {
+          font-weight: 700;
+        }
+      }
+    }
+    &__menu {
+      &_close {
+        display: flex;
+        font-size: 1.5rem;
+        color: white;
+      }
+    }
+  }
+}
+
+.menumain {
+  background: #54b435;
+  position: absolute;
+  z-index: 2222;
+  width: 100%;
+  &__container {
+    max-width: 95%;
+    margin: 0 auto;
+    ul {
+      padding: 0.7rem 0;
+      li {
+        color: #ccc;
+        margin-bottom: 0.5rem;
+        &:active {
+          color: #fff;
+        }
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    &__container {
+      ul {
+        li {
+          font-size: 0.7rem;
+          margin-bottom: 0.2rem;
+        }
       }
     }
   }
@@ -94,7 +160,7 @@
       }
       &:hover {
         span {
-          color: #222;
+          color: #54b435;
         }
         svg {
           fill: #fff;
@@ -155,23 +221,15 @@
       }
     }
   }
-  &__img {
-    width: 100px !important;
-    height: 100px !important;
-    margin-right: 8px;
-  }
-  .col {
-    display: flex;
-    flex-direction: column;
-    span {
-      // color: $light-orange-color;
-      &:first-of-type {
-        color: $light-orange-color;
-      }
-      &:last-of-type {
-        font-size: 14px;
-        color: $light-orange-color;
-        text-decoration: underline;
+  @media (max-width: 900px) {
+    height: 100%;
+    width: 180px;
+    ul {
+      li {
+        height: 10px;
+        a {
+          font-size: 0.7rem;
+        }
       }
     }
   }
@@ -239,5 +297,8 @@
         fill: #fff;
       }
     }
+  }
+  @media (max-width: 900px) {
+    display: none;
   }
 }

@@ -1,4 +1,4 @@
-.swiper {
+.mainpost {
   display: flex;
   flex-direction: column;
   // @media (min-width: 500px) {
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    height: 130px;
+    height: 100%;
     // max-width: 500px;
 
     &_category {

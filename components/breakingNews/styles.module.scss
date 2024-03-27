@@ -114,6 +114,13 @@
           line-height: 18px;
         }
       }
+      @media (max-width: 900px) {
+        &__news {
+          img {
+            height: 200px;
+          }
+        }
+      }
     }
     .continuation {
       display: grid;

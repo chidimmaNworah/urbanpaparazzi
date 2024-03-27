@@ -50,6 +50,7 @@ export default function product({ post, related, news, categories }) {
           <div className={styles.product__main}>
             <div className={styles.product__main_one}>
               <MainPost post={post} />
+              {/* <p>baby it youuuuuuuuuuuu baby its you uuu</p> */}
             </div>
             <div className={styles.product__main_two}>
               <ForCategories
@@ -78,29 +79,10 @@ export default function product({ post, related, news, categories }) {
            */}
         </div>
       </div>
+      <Footer news={news} />
     </>
   );
 }
-
-// export async function getServerSideProps(context) {
-//   // const { query } = context;
-//   // const slug = query.slug;
-//   const { params } = context;
-//   const slug = params.slug;
-//   console.log(slug);
-//   await db.connectDb();
-
-//   let post = await News.findOne({ slug }).lean();
-//   console.log(post);
-
-//   // const related = await News.find({ category: post.category._id }).lean();
-//   return {
-//     props: {
-//       post: JSON.parse(JSON.stringify(post)),
-//       // related: JSON.parse(JSON.stringify(related)),
-//     },
-//   };
-// }
 
 export async function getServerSideProps(context) {
   try {

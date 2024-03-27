@@ -91,7 +91,7 @@
       width: 100%;
       padding-top: 100%;
       border-radius: 50%;
-      background-image: linear-gradient(to top right, #fff, $dark-red-color);
+      background-image: linear-gradient(to top right, #fff, #379237);
       position: absolute;
       top: 0;
       left: -50%;
@@ -111,10 +111,10 @@
   width: 100%;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  @media (max-width: 1100px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr;
+  // @media (max-width: 1100px) {
+  //   grid-template-columns: 1fr;
+  // }
   .orders {
     position: relative;
     display: grid;
@@ -135,7 +135,7 @@
           border-radius: 5px !important;
           border-bottom: 1px solid #0000001a;
           &:hover {
-            background: $dark-red-color;
+            background: #4cb64c;
             color: #fff;
             td {
               &:nth-of-type(5) {
@@ -192,11 +192,11 @@
     a {
       position: relative;
       padding: 5px 10px;
-      background: $dark-red-color;
+      background: #379237;
       color: #fff;
       border-radius: 4px;
       &:hover {
-        background: $dark-pink-color;
+        background: #4cb64c;
       }
     }
   }
@@ -264,7 +264,7 @@
       // }
       tr {
         &:hover {
-          background: $dark-red-color;
+          background: #4cb64c;
           color: #fff;
         }
       }

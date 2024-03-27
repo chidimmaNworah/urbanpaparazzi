@@ -57,9 +57,9 @@
       font-weight: 600;
       font-size: 14px;
       a {
-        color: $light-pink-color;
+        color: #1e1e1e;
         cursor: pointer;
-        border-bottom: 1px solid $light-pink-color;
+        border-bottom: 1px solid #1e1e1e;
         padding-bottom: 3px;
       }
     }
@@ -71,7 +71,7 @@
       font-size: 40px;
       font-weight: 600;
       margin: 0;
-      color: $light-pink-color;
+      color: #1e1e1e;
     }
     p {
       color: #96979b;
@@ -86,8 +86,8 @@
       width: fit-content;
       height: 40px;
       &:hover {
-        color: $dark-red-color;
-        border-bottom: 1px solid $dark-red-color;
+        color: #379237;
+        border-bottom: 1px solid #379237;
       }
     }
   }
@@ -95,7 +95,7 @@
     margin-top: 1rem;
     .or {
       position: relative;
-      color: $dark-red-color;
+      color: #379237;
       // padding-left: 8rem;
       &:before {
         content: "";
